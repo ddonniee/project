@@ -1,0 +1,62 @@
+/* 변수 지정 */
+:root {
+
+    /* color */
+    --color-black: #000000;
+    --color-grey: #F8F8FF;
+    --color-blue: #B0C4DE;
+    --color-white: #FFFFFF;
+    --color-yellow: #fcffc7;
+    /* size */
+    --font-size: 14px;
+    --size-image: 200px;
+    --size-botton: 15px;
+    --size-border: 5px;
+    --size-width: 200px;
+    --size-height: 30px;
+    /* animation */
+    --transition-duration: 300ms;
+   
+  }
+  body {
+    height: 100vh;
+    background-color: var(--color-yellow);
+    align-items: center;
+  
+  }
+  .main {
+    font-size: 3px;
+    color: var(--color-black);
+    background-color: var(--color-grey);
+    width: var(--size-image);
+    height: var(--size-image);
+    align-items: center;
+    background-color: transparent;
+  }
+  
+  #Title,
+  #Description {
+    width: var(--size-width);
+    height: var(--size-height);
+  }
+  .btn{
+    background-color: var(--color-blue);
+    color: var(#FFFFFF);
+    margin-bottom: var(--size-botton);
+  }
+  
+  .main:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  .choice {
+    font-family: serif;
+    font-size: var(--size-border);
+    color: var(--color-white);
+  }
+  .choice:hover {
+    cursor: pointer;
+  }
+  #add {
+    border-radius: var(--size-border);
+  }

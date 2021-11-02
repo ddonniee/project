@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="design.css">
+  <title>Planner</title>
+  
+</head>
+<body>
+  
+  <a href="index.html"><img class="main" src="img/duck.png"></a></span>
+  
+  <section class="category">
+ 	 <button class="btn"><a href="data/daily">daily</a></button>
+ 	 <button class="btn"><a href="data/weekly">weekly</a></button>
+ 	 <button class="btn"><a href="data/monthly">monthly</a></button>
+   <button class="btn"><a href="data/yearly">yearly</a></button>
+ 	 <button class="btn"><a href="data/bucketlist">bucket list</a></button>
+  </section>
+
+  <form name="lists" class="info">
+   <p><input id="Title" type="text" name="title" placeholder="add things to do..."></p>
+   <p><textarea id="Description" name="description"></textarea></p>
+    <input type="radio" class="choice" name="selector" value="daily" id="choice-1" checked>
+      <label for="daily">D</label>
+    <input type="radio" class="choice" name="selector" value="weekly" id="choice-2">
+     <label for="weekly">W</label>
+    <input type="radio" class="choice" name="selector" value="monthly" id="choice-3">
+     <label for="monthly">M</label>
+    <input type="radio" class="choice" name="selector" value="yearly" id="choice-4">
+     <label for="yearly">Y</label>
+    <input type="radio" class="choice" name="selector" value="bucketlist" id="choice-5">
+     <label for="bucketlist">Bucket</label>
+     <button id="add" onclick="getInformation()">add</button>
+  </form>
+
+  <script>
+    const add=document.querySelector('#add');
+    
+    add.onclick = function modeSeletor() {
+    
+    const rbs=document.querySelectorAll('input[name="selector"]');
+    let selectedOne;
+
+    for(const rb of rbs) {
+      if(rb.checked) {
+        selectedOne=rb.value;
+
+        break;
+      }
+    }
+     return selectedOne;
+    };
+
+    var each_title;
+    var each_description;
+
+    function getInformation() {
+       each_title = document.getElementById("Title").value;
+       each_description= document.getElementById("Description").value;
+
+      return each_title,each_description;
+    }
+
+    var temp = modeSeletor();
+
+    function add_process(temp,each_title,each_description) {
+      const fs=require('fs');
+      fs.writeFile(`${address}/${title}`,`${description}`,'utf-8', function(err) {
+        if(err) {
+          return console.log("Error!");
+        } 
+        fs.readfile('data/unit', (err,data) =>{
+          if(err) throw err;
+          console.log(data);
+        });
+      });
+      
+      
+      // create document below data/${unit}/rb name;
+      // show included list below current unit adding brand new one.
+      // show create/update/delete buttons
+    };
+  </script>
+  
+</body>
+</html>
